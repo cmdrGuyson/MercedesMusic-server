@@ -35,6 +35,10 @@ app.use(express.json());
 /* Log HTTP requests */
 app.use(morgan("dev"));
 
+app.get("/", (request, response) => {
+  return response.status(200).json({ message: "Hello world!" });
+});
+
 app.post("/admin-create", admin_create);
 app.post("/admin-login", admin_login);
 app.get("/logged-room", auth(), get_logged_room);
