@@ -206,6 +206,8 @@ exports.set_room_token = async (request, response) => {
 
     const token = request.body.token;
 
+    console.log(token);
+
     if (!token)
       return response.status(400).json({ error: "Token is required" });
 
@@ -217,6 +219,7 @@ exports.set_room_token = async (request, response) => {
 
     return response.status(200).json({ room: result });
   } catch (error) {
+    console.log(error);
     return response.status(500).json({ error });
   }
 };
