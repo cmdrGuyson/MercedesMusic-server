@@ -40,7 +40,8 @@ module.exports = (admin) => async (request, response, next) => {
 
       request.user = user;
     } else {
-      room = await Room.findById(auth_token.room.roomId);
+      console.log("room", auth_token.room);
+      room = await Room.findById(auth_token.room._id);
       console.log(room);
       request.room = room;
     }
