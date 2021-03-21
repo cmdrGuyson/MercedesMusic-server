@@ -14,7 +14,7 @@ A centralized audio controller web application which can connect to the devices 
 - Multi-media player repository - https://github.com/avishkajayasundara/Mercedes-Multimedia-Player
 
 # Technologies Used
-The backend for this solution was developed using Node JS with Mongo DB as the database, whereas the central controller and the media player applications are developed using React JS. Additionally, Heroku and Firebase has been used to develop this solution.
+The backend for this solution was developed using Node JS with Mongo DB as the database, whereas the central controller and the media player applications are developed using React JS. Additionally, Firebase cloud messaging is used to communicate with media player instances and command them.
 
 # Solution
 
