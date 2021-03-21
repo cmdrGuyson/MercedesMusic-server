@@ -72,7 +72,7 @@ exports.get_all_songs = async (request, response) => {
 
 exports.get_all_playlists = async (request, response) => {
   try {
-    const playlists = await Playlist.find();
+    const playlists = await Playlist.find().populate("songs");
     return response.status(200).json({ playlists });
   } catch (error) {
     return response.status(500).json({ error });
