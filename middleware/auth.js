@@ -40,7 +40,7 @@ module.exports = (admin) => async (request, response, next) => {
 
       request.user = user;
     } else {
-      room = await Room.findOne({ roomId: auth_token.room.roomId });
+      room = await Room.findById(auth_token.room.roomId);
 
       request.room = room;
     }
