@@ -39,6 +39,40 @@ exports.admin_create = async (request, response) => {
   }
 };
 
+/* DEV ROUTE TO CREATE ADMIN (won't be publicly exposed) */
+exports.admin_create_1 = async (request, response) => {
+  try {
+    const username = request.body.username;
+
+    if (!username)
+      return response.status(400).json({ error: "Username required" });
+
+    let password = "password";
+
+    const user = await Admin.findOne({ username: username });
+
+    if (user)
+      return response
+        .status(400)
+        .json({ error: { username: "User already exists" } });
+
+    //Hash password
+    password = await bcrypt.hash(password, 6);
+
+    const admin = {
+      username,
+      password,
+    };
+
+    const created_admin = await Admin.create(admin);
+
+    return response.status(201).json({ created_admin });
+  } catch (error) {
+    console.log(error);
+    return response.status(500).json({ error });
+  }
+};
+
 /* ADMIN LOGIN */
 exports.admin_login = async (request, response) => {
   const { username, password } = request.body;

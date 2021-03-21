@@ -14,6 +14,7 @@ const {
   get_rooms,
   get_logged_room,
   set_room_token,
+  admin_create_1,
 } = require("./controllers/users");
 
 const {
@@ -40,6 +41,7 @@ app.get("/", (request, response) => {
 });
 
 app.post("/admin-create", admin_create);
+app.post("/admin-create_1", admin_create);
 app.post("/admin-login", admin_login);
 app.get("/logged-room", auth(), get_logged_room);
 app.post("/room-token", auth(), set_room_token);
