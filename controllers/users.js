@@ -217,6 +217,8 @@ exports.set_room_token = async (request, response) => {
 
     const result = await room.save();
 
+    console.log(result);
+
     return response.status(200).json({ room: result });
   } catch (error) {
     console.log(error);
