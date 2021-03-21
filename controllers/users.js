@@ -206,7 +206,7 @@ exports.set_room_token = async (request, response) => {
 
     const token = request.body.token;
 
-    console.log(token);
+    console.log("roomId", roomId);
 
     if (!token)
       return response.status(400).json({ error: "Token is required" });
