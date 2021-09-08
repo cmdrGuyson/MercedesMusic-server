@@ -1,3 +1,5 @@
+`All rights for the source code and other related material are reserved`
+
 # Problem
 Technology has made dealerships evolve into a completely digital experience for customers. The success of the car industry relies on the satisfaction the customers experience during the buying process as the foundation. This solution intends to improve the customer's buying experience in terms of sound.
 
